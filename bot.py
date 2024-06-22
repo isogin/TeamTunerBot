@@ -17,7 +17,6 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print(f'We have logged in as {client.user}')
 
-
 # Load JSON data
 with open('data.json', 'r') as file:
     data = json.load(file)
@@ -27,6 +26,5 @@ with open('data.json', 'r') as file:
 async def on_reaction_add(reaction, user):
     channel = reaction.message.channel
     await channel.send(f'{user.mention} がお助けします')
-
 
 client.run(TOKEN)
